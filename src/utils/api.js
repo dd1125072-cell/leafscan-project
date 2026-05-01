@@ -1,4 +1,4 @@
-const BASE_URL = "https://leafscan-project-4wny.onrender.com";
+const BASE_URL = "https://leafscan-project-4wny.onrender.com/api";
 
 export function getToken()  { return localStorage.getItem('pd_token'); }
 function setToken(token)    { localStorage.setItem('pd_token', token); }
