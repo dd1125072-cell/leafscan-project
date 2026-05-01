@@ -110,6 +110,6 @@ def predict():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    port = int(os.environ.get('MODEL_PORT', 8000))
-    print(f'Model service on http://localhost:{port}')
-    app.run(host='0.0.0.0', port=port, debug=False)
+    port = int(os.environ.get('PORT', 10000))
+    print(f'Model service running on port {port}')
+    app.run(host='0.0.0.0', port=port)
