@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const BASE_URL = "https://leafscan-project-4wny.onrender.com";
 
 export function getToken()  { return localStorage.getItem('pd_token'); }
 function setToken(token)    { localStorage.setItem('pd_token', token); }
