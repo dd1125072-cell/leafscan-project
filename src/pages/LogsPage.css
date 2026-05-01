@@ -1,0 +1,162 @@
+/* ── HEADER ──────────────────────────────────────────────────────── */
+.logs-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.logs-title { font-size: 24px; color: var(--green-800); margin-bottom: 3px; }
+.logs-sub   { font-size: 13px; color: var(--gray-400); }
+
+/* ── STATS ───────────────────────────────────────────────────────── */
+.logs-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+
+/* ── FILTERS ─────────────────────────────────────────────────────── */
+.logs-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+.logs-search        { flex: 1; min-width: 180px; }
+.logs-filter-select { width: auto; min-width: 150px; }
+
+/* ── TABLE CARD ──────────────────────────────────────────────────── */
+.logs-table-card { padding: 0; overflow: hidden; }
+
+.log-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.log-table thead th {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-400);
+  border-bottom: 1.5px solid var(--gray-50);
+  background: var(--gray-50);
+  white-space: nowrap;
+}
+.log-table tbody tr {
+  border-bottom: 1px solid var(--gray-50);
+  transition: background 0.15s;
+}
+.log-table tbody tr:last-child { border-bottom: none; }
+.log-table tbody tr:hover       { background: #f0f7e6; }
+.log-table tbody tr.row-expanded { background: #e8f4d8; }
+
+.log-table td { padding: 11px 12px; color: var(--gray-800); vertical-align: middle; }
+
+/* ── THUMB ───────────────────────────────────────────────────────── */
+.log-thumb {
+  width: 48px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+  border: 1px solid var(--green-100);
+}
+.log-thumb-ph {
+  width: 48px;
+  height: 38px;
+  border-radius: 5px;
+  background: var(--green-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.log-plant    { font-weight: 500; color: var(--green-800); }
+.log-date     { color: var(--gray-400); font-size: 12px; white-space: nowrap; }
+.log-expand-btn {
+  color: var(--gray-400);
+  font-size: 10px;
+  text-align: center;
+  width: 30px;
+}
+
+/* ── CONFIDENCE BAR (table) ──────────────────────────────────────── */
+.log-conf-row  { display: flex; align-items: center; gap: 6px; }
+.log-conf-bar  {
+  width: 64px;
+  height: 6px;
+  background: var(--gray-100);
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.log-conf-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+.log-conf-fill.healthy  { background: var(--teal-400); }
+.log-conf-fill.diseased { background: var(--red-400);  }
+.log-conf-num { font-size: 12px; font-weight: 500; color: var(--gray-600); }
+
+/* ── EXPANDED ROW DETAIL ─────────────────────────────────────────── */
+.log-detail-row td { padding: 0; background: #f0f7e6; }
+.log-detail {
+  display: flex;
+  gap: 16px;
+  padding: 14px 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.log-detail-img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--green-100);
+  flex-shrink: 0;
+}
+.log-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--gray-700);
+}
+.detail-label { font-weight: 600; color: var(--gray-800); margin-right: 4px; }
+
+/* ── EMPTY STATE ─────────────────────────────────────────────────── */
+.logs-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--green-50);
+  box-shadow: var(--shadow-card);
+}
+.logs-empty-icon  { font-size: 48px; display: block; margin-bottom: 12px; }
+.logs-empty-title { font-size: 16px; font-weight: 600; color: var(--gray-800); margin-bottom: 6px; }
+.logs-empty-sub   { font-size: 13px; color: var(--gray-400); }
+
+/* ── HINT ────────────────────────────────────────────────────────── */
+.logs-count-hint {
+  font-size: 12px;
+  color: var(--gray-400);
+  text-align: right;
+  margin-top: 8px;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .logs-stats { grid-template-columns: 1fr 1fr; }
+  .logs-stats > :last-child { grid-column: 1 / -1; }
+  .log-table thead th:nth-child(5),
+  .log-table tbody td:nth-child(5) { display: none; }
+}

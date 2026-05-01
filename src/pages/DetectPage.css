@@ -1,0 +1,105 @@
+.required-star { color: var(--red-400); }
+
+/* ── UPLOAD ZONE ─────────────────────────────────────────────────── */
+.upload-zone {
+  border: 2px dashed var(--green-200);
+  border-radius: var(--radius);
+  padding: 2.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--green-50);
+  user-select: none;
+}
+.upload-zone:hover,
+.upload-zone.drag-over {
+  border-color: var(--green-400);
+  background: #d5e8b8;
+}
+.upload-zone:focus { outline: 3px solid var(--green-400); outline-offset: 2px; }
+
+.upload-zone-icon  { font-size: 38px; display: block; margin-bottom: 10px; }
+.upload-zone-title { font-size: 14px; font-weight: 500; color: var(--green-800); margin-bottom: 4px; }
+.upload-zone-sub   { font-size: 12px; color: var(--green-600); }
+
+/* ── UPLOAD PREVIEW ──────────────────────────────────────────────── */
+.upload-preview-wrap { position: relative; }
+.upload-preview {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  display: block;
+  border: 1.5px solid var(--green-100);
+}
+.upload-remove {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--red-600);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s;
+}
+.upload-remove:hover { background: var(--red-50); }
+
+/* ── ERROR ───────────────────────────────────────────────────────── */
+.detect-error {
+  color: var(--red-600);
+  font-size: 13px;
+  background: var(--red-50);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--red-400);
+  margin-bottom: 12px;
+}
+
+/* ── ANALYZING STATE ─────────────────────────────────────────────── */
+.analyzing-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.analyzing-dot {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+  flex-shrink: 0;
+}
+.analyze-hint {
+  text-align: center;
+  font-size: 12px;
+  color: var(--gray-400);
+  margin-top: 10px;
+}
+
+/* ── TIPS ────────────────────────────────────────────────────────── */
+.detect-tips { background: var(--green-50); border-color: var(--green-100); }
+.tips-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.tips-list li {
+  font-size: 13px;
+  color: var(--green-800);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+.tips-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green-400);
+  font-weight: 600;
+}

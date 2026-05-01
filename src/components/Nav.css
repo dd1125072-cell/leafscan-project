@@ -1,0 +1,167 @@
+/* ── NAV ─────────────────────────────────────────────────────────────── */
+.nav {
+  background: var(--green-800);
+  padding: 0 1.5rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 12px;
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--green-50);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-brand-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--green-400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-btn:hover   { background: rgba(255, 255, 255, 0.12); }
+.nav-btn.active  { background: var(--green-400); border-color: var(--green-400); }
+
+.nav-logout {
+  border-color: rgba(255, 255, 255, 0.15);
+  font-size: 12px;
+  padding: 5px 11px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-avatar {
+  width: 30px;
+  height: 30px;
+  background: var(--teal-400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.nav-user-name {
+  font-size: 13px;
+  color: var(--green-100);
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── TOAST ───────────────────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--green-800);
+  color: var(--green-50);
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 9999;
+  animation: slideIn 0.3s ease;
+  max-width: 300px;
+  line-height: 1.4;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* ── PASSWORD STRENGTH ───────────────────────────────────────────────── */
+.pw-strength { margin-top: 6px; }
+.pw-bars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+.pw-bar {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--gray-100);
+  transition: background 0.3s;
+}
+.pw-label { font-size: 11px; font-weight: 500; }
+
+/* ── SPINNER ─────────────────────────────────────────────────────────── */
+.spinner {
+  border: 3px solid var(--green-100);
+  border-top-color: var(--green-600);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+/* ── STAT CARD ───────────────────────────────────────────────────────── */
+.stat-card {
+  background: #fff;
+  border: 1px solid var(--green-50);
+  border-radius: var(--radius-sm);
+  padding: 14px 12px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+.stat-num.green { color: var(--green-600); }
+.stat-num.teal  { color: var(--teal-600);  }
+.stat-num.red   { color: var(--red-400);   }
+.stat-lbl { font-size: 11px; color: var(--gray-400); margin-top: 4px; font-weight: 500; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────── */
+@media (max-width: 500px) {
+  .nav-user-name { display: none; }
+  .nav-brand span { display: none; }
+}
